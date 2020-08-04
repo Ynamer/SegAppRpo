@@ -59,7 +59,7 @@ public class member_show extends AppCompatActivity   {
        db=new SegDbHelper(this);
        // getSupportLoaderManager().initLoader(EXISTING_PET_LOADER, null, this);
 
-        Toast.makeText(this,mCurrentPetUri.toString(), Toast.LENGTH_SHORT).show();
+      //  Toast.makeText(this,mCurrentPetUri.toString(), Toast.LENGTH_SHORT).show();
     }
 
     /*@NonNull

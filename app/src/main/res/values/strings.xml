@@ -1,0 +1,120 @@
+<resources>
+    <string name="app_name">SEG</string>
+
+    <!-- Label for dropdown menu option if the user's hour is unknown [CHAR LIMIT=20] -->
+    <string name="hour_unknown">Unknown</string>
+
+    <!-- Label for dropdown menu option if the user's hour is tenhours [CHAR LIMIT=20] -->
+    <string name="tenhours">ten hours</string>
+
+    <!-- Label for dropdown menu option if the user's hour is fifteenhours [CHAR LIMIT=20] -->
+    <string name="fifteenhours">fifteen hours</string>
+
+    <!-- Label for dropdown menu option if the user's hour is twentyhours [CHAR LIMIT=20] -->
+    <string name="twentyhours">twenty hours</string>
+
+    <!-- Label for dropdown menu option if the user's hour is moretwentyhours [CHAR LIMIT=20] -->
+    <string name="moretwentyhours">more twenty hours</string>
+
+
+    <!-- Label for dropdown menu option if the user's Meeting is unknown [CHAR LIMIT=20] -->
+    <string name="meetinghunknown">Unknown</string>
+
+    <!-- Label for dropdown menu option if the Can user  Meet  [CHAR LIMIT=20] -->
+    <string name="can_meeting">I can come</string>
+
+    <!-- Label for dropdown menu option if the use  Cant Meeting [CHAR LIMIT=20] -->
+    <string name="can_notmeeting">I cant come</string>
+
+    <!-- Label for dropdown menu option if the user's English unknown[CHAR LIMIT=20] -->
+    <string name="english_unknown">unknown</string>
+
+    <!-- Label for dropdown menu option if the user's English Beginner [CHAR LIMIT=20] -->
+    <string name="Beginnerenglish">mBeginner</string>
+
+    <!-- Label for dropdown menu option if the user's Intermediate english [CHAR LIMIT=20] -->
+    <string name="intermidateenglish">Intermediate</string>
+
+    <!-- Label for dropdown menu option if the user's Advanced English [CHAR LIMIT=20] -->
+    <string name="advance_english">Advanced</string>
+
+    <!-- Label for dropdown menu option if the pet's gender is unknown [CHAR LIMIT=20] -->
+    <string name="gender_unknown">Unknown</string>
+
+    <!-- Label for dropdown menu option if the pet is male [CHAR LIMIT=20] -->
+    <string name="gender_male">Male</string>
+
+    <!-- Label for dropdown menu option if the pet is female [CHAR LIMIT=20] -->
+    <string name="gender_female">Female</string>
+
+    <!-- Toast message in editor when new member has failed to be inserted [CHAR LIMIT=NONE] -->
+    <string name="editor_insert_fember_failed">Error with saving member</string>
+
+    <!-- Toast message in editor when new pet has been successfully inserted [CHAR LIMIT=NONE] -->
+    <string name="editor_insert_member_successful">member saved</string>
+
+    <!-- Toast message in editor when new member has failed to be update [CHAR LIMIT=NONE] -->
+    <string name="editor_update_member_failed">Error with update pet</string>
+
+
+    <!-- Label for overflow menu option that inserts fake pet data into the app [CHAR LIMIT=20] -->
+    <string name="action_insert_dummy_data">Insert Dummy Data</string>
+
+    <!-- Label for overflow menu option that deletes all pet data in the app [CHAR LIMIT=20] -->
+    <string name="action_delete_all_entries">Delete All Pets</string>
+    <!-- Title text for the empty view, which describes the empty dog house image [CHAR LIMIT=50] -->
+    <string name="empty_view_title_text">It\'s a bit lonely here...</string>
+
+    <!-- Subtitle text for the empty view that prompts the user to add a pet [CHAR LIMIT=50] -->
+    <string name="empty_view_subtitle_text">Get started by adding a pet</string>
+
+    <!-- Title for the activity to add a new pet [CHAR LIMIT=20] -->
+    <string name="editor_activity_title_new_pet">Add a Pet</string>
+
+    <!-- Label for editor menu option to save pet and leave editor [CHAR LIMIT=20] -->
+    <string name="action_save">Save</string>
+
+    <!-- Label for editor overflow menu option that deletes the current pet [CHAR LIMIT=20] -->
+    <string name="action_delete">Delete</string>
+
+    <!-- Label for overview category of attributes in the editor [CHAR LIMIT=30] -->
+    <string name="category_overview">Overview</string>
+
+    <!-- Label for gender information in the editor [CHAR LIMIT=30] -->
+    <string name="category_gender">Gender</string>
+
+    <!-- Label for measurement information in the editor [CHAR LIMIT=30] -->
+    <string name="category_measurement">Measurement</string>
+
+    <!-- Text hint for name field in the editor [CHAR LIMIT=30] -->
+    <string name="hint_pet_name">Name</string>
+
+    <!-- Text hint for breed field in the editor [CHAR LIMIT=30] -->
+    <string name="hint_pet_breed">Breed</string>
+
+    <!-- Text hint for name field in the editor [CHAR LIMIT=30] -->
+    <string name="hint_pet_weight">Weight</string>
+
+    <!-- Units for weight of the pet (kilograms) [CHAR LIMIT=5] -->
+    <string name="unit_pet_weight">kg</string>
+
+
+    <!-- Toast message in editor when new pet has been successfully inserted [CHAR LIMIT=NONE] -->
+    <string name="editor_insert_pet_successful">Pet saved</string>
+
+    <!-- Toast message in editor when new pet has been successfully update [CHAR LIMIT=NONE] -->
+    <string name="editor_update_pet_successful">Pet update</string>
+
+    <!-- Toast message in editor when new pet has failed to be inserted [CHAR LIMIT=NONE] -->
+    <string name="editor_insert_pet_failed">Error with saving pet</string>
+
+    <!-- Toast message in editor when new pet has failed to be update [CHAR LIMIT=NONE] -->
+    <string name="editor_update_pet_failed">Error with update pet</string>
+
+    <!-- Title for the activity to edite an existing pet [CHAR LIMIT=NONE] -->
+    <string name="editor_activity_title_edite_pet">Edit pet </string>
+
+    <!-- Toast message in editor when new member has been successfully update [CHAR LIMIT=NONE] -->
+    <string name="editor_update_member_successful">Pet update</string>
+
+</resources>

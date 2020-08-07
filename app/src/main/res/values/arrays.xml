@@ -42,6 +42,20 @@
         <item>@string/gender_female</item>
     </string-array>
 
+    <!-- These are the options displayed in the state drop-down Spinner -->
+    <string-array name="array_state_options">
+        <item>@string/state_accept</item>
+        <item>@string/state_unaccept</item>
+
+    </string-array>
+
+    <!-- These are the options displayed in the admin drop-down Spinner -->
+    <string-array name="array_admin_options">
+        <item>@string/admin</item>
+        <item>@string/No_admin</item>
+
+    </string-array>
+
 
 </resources>
 

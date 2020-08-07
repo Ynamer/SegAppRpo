@@ -44,6 +44,20 @@
     <!-- Label for dropdown menu option if the pet is male [CHAR LIMIT=20] -->
     <string name="gender_male">Male</string>
 
+
+    <!-- Label for dropdown menu option if the memper is acceptable [CHAR LIMIT=20] -->
+    <string name="state_accept">Acceptable</string>
+
+    <!-- Label for dropdown menu option if the memper is acceptable [CHAR LIMIT=20] -->
+    <string name="state_unaccept">UnAcceptable</string>
+
+    <!-- Label for dropdown menu option if the memper is acceptable [CHAR LIMIT=20] -->
+    <string name="admin">admin</string>
+
+    <!-- Label for dropdown menu option if the memper is acceptable [CHAR LIMIT=20] -->
+    <string name="No_admin">no admin</string>
+
+
     <!-- Label for dropdown menu option if the pet is female [CHAR LIMIT=20] -->
     <string name="gender_female">Female</string>
 
@@ -56,7 +70,14 @@
     <!-- Toast message in editor when new member has failed to be update [CHAR LIMIT=NONE] -->
     <string name="editor_update_member_failed">Error with update pet</string>
 
+    <!-- Dialog message when user is leaving editor but hasn't saved changes [CHAR LIMIT=NONE] -->
+    <string name="unsaved_changes_dialog_msg">Discard your changes and quit editing?</string>
 
+    <!-- Dialog button text for the option to discard a user's changes [CHAR LIMIT=20] -->
+    <string name="discard">Discard</string>
+
+    <!-- Dialog button text for the option to keep editing the current pet [CHAR LIMIT=20] -->
+    <string name="keep_editing">Keep Editing</string>
     <!-- Label for overflow menu option that inserts fake pet data into the app [CHAR LIMIT=20] -->
     <string name="action_insert_dummy_data">Insert Dummy Data</string>
 
@@ -103,18 +124,37 @@
     <string name="editor_insert_pet_successful">Pet saved</string>
 
     <!-- Toast message in editor when new pet has been successfully update [CHAR LIMIT=NONE] -->
-    <string name="editor_update_pet_successful">Pet update</string>
+    <string name="update_Member_successful">Member update</string>
 
     <!-- Toast message in editor when new pet has failed to be inserted [CHAR LIMIT=NONE] -->
     <string name="editor_insert_pet_failed">Error with saving pet</string>
 
     <!-- Toast message in editor when new pet has failed to be update [CHAR LIMIT=NONE] -->
-    <string name="editor_update_pet_failed">Error with update pet</string>
+    <string name="update_Member_failed">Error with update Member</string>
+
+
+    <!-- Dialog message to ask the user to confirm deleting the current pet [CHAR LIMIT=NONE] -->
+    <string name="delete_dialog_msg">Delete this Member?</string>
+
+    <!-- Dialog button text for the option to confirm deleting the current pet [CHAR LIMIT=20] -->
+    <string name="delete">Delete</string>
+
+    <!-- Dialog button text for the option to cancel deletion of the current pet [CHAR LIMIT=20] -->
+    <string name="cancel">Cancel</string>
+
+    <!-- Toast message in editor when current pet was successfully deleted [CHAR LIMIT=NONE] -->
+    <string name="editor_delete_member_successful">Member deleted</string>
+
+    <!-- Toast message in editor when current pet has failed to be deleted [CHAR LIMIT=NONE] -->
+    <string name="editor_delete_member_failed">Error with deleting member</string>
 
     <!-- Title for the activity to edite an existing pet [CHAR LIMIT=NONE] -->
     <string name="editor_activity_title_edite_pet">Edit pet </string>
 
     <!-- Toast message in editor when new member has been successfully update [CHAR LIMIT=NONE] -->
     <string name="editor_update_member_successful">Pet update</string>
+
+
+
 
 </resources>

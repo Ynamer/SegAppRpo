@@ -6,74 +6,405 @@
     android:layout_height="match_parent"
     tools:context="com.mind.Seg_app.RegisterActivity">
 
-    <android.support.v7.widget.Toolbar
+
+    <!-- <android.support.v7.widget.Toolbar
         android:id="@+id/bgHeaderـReg1"
         android:layout_width="match_parent"
         android:layout_height="120dp"
         android:background="@drawable/header_register"
-        android:elevation="5dp" />
-
-    <TextView
-        android:id="@+id/tvSignUp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="40dp"
-        android:elevation="10dp"
-        android:transitionName="tvLogin"
-        android:text="Sign up"
-        android:textColor="@color/colorWhite"
-        android:textSize="20sp"
-        android:textStyle="bold" />
+        android:elevation="5dp" /> -->
 
 
+    <!-- <TextView
+         android:id="@+id/tvSignUp"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:layout_centerHorizontal="true"
+         android:layout_marginTop="40dp"
+         android:elevation="10dp"
+         android:text="View member data
+ "
+         android:textColor="@color/colorWhite"
+         android:textSize="20sp"
+         android:textStyle="bold"
+         android:transitionName="tvLogin" />
+         -->
 
 
+     <ScrollView
+         android:layout_width="match_parent"
+         android:layout_height="match_parent"
+         android:layout_below="@+id/bgHeaderـReg1"
+         android:layout_margin="20dp">
 
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@+id/bgHeaderـReg1"
-        android:layout_margin="20dp">
-        <RelativeLayout
-            android:id="@+id/rlayout"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+         <RelativeLayout
+             android:id="@+id/rlayout"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent">
 
-            <android.support.v7.widget.CardView
-                android:id="@+id/cv"
+             <android.support.v7.widget.CardView
+                 android:id="@+id/cv"
+                 android:layout_width="match_parent"
+                 android:layout_height="match_parent"
+                 app:cardCornerRadius="25dp"
+                 app:cardElevation="4dp" />
+
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                app:cardCornerRadius="25dp"
-                app:cardElevation="4dp"/>
-            <TextView
-                android:id="@+id/Text_name"
-                android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:paddingLeft="16dp"
-                android:hint="hhhhhhhh"></TextView>
-            <TextView
-                android:id="@+id/Text_sp"
-                android:layout_below="@+id/Text_name"
-                android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:paddingLeft="16dp"
+                android:orientation="vertical"
+                android:padding="16dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:text="name"
+                        style="@style/CategoryStyle"></TextView>
 
-                android:hint="ddddddd"></TextView>
+                    <!-- Input field -->
+                   <LinearLayout
+                       android:layout_height="wrap_content"
+                       android:layout_width="0dp"
+                       android:layout_weight="2"
+                       android:orientation="vertical">
+                   <EditText
 
-            <RelativeLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/cv"
-                android:layout_alignLeft="@+id/cv"
-                android:layout_alignRight="@+id/cv"
-                android:layout_marginLeft="35dp"
-                android:layout_marginTop="-30dp"
-                android:layout_marginRight="35dp"
-                android:elevation="10dp">
+                       android:id="@+id/txt_name"
+                       style="@style/EditorFieldStyle"></EditText>
+                   </LinearLayout>
+
+               </LinearLayout>
 
 
-            </RelativeLayout>
+               <LinearLayout
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:orientation="horizontal">
+                   <TextView
+                       android:text="gender"
+                       style="@style/CategoryStyle"></TextView>
+
+                   <!-- Input field -->
+                   <LinearLayout
+                       android:layout_height="wrap_content"
+                       android:layout_width="0dp"
+                       android:layout_weight="2"
+                       android:orientation="vertical">
+
+                       <EditText
+                           style="@style/EditorFieldStyle"
+                           android:id="@+id/txt_gender"
+                           ></EditText>
+                   </LinearLayout>
+
+               </LinearLayout>
+
+               <LinearLayout
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:orientation="horizontal">
+                   <TextView
+                       android:text="AGe"
+                       style="@style/CategoryStyle"></TextView>
+
+                   <!-- Input field -->
+                   <LinearLayout
+                       android:layout_height="wrap_content"
+                       android:layout_width="0dp"
+                       android:layout_weight="2"
+                       android:orientation="vertical">
+
+                       <EditText
+                           style="@style/EditorFieldStyle"
+                           android:id="@+id/txt_age"
+                           ></EditText>
+                   </LinearLayout>
+
+               </LinearLayout>
+
+               <LinearLayout
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:orientation="horizontal">
+                   <TextView
+                       android:text="Phone Number"
+                       style="@style/CategoryStyle"></TextView>
+
+                   <!-- Input field -->
+                   <LinearLayout
+                       android:layout_height="wrap_content"
+                       android:layout_width="0dp"
+                       android:layout_weight="2"
+                       android:orientation="vertical">
+
+                       <EditText
+                           style="@style/EditorFieldStyle"
+                           android:id="@+id/txt_phone"
+                           ></EditText>
+                   </LinearLayout>
+
+               </LinearLayout>
+
+               <LinearLayout
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:orientation="horizontal">
+                   <TextView
+                       android:text="Country"
+                       style="@style/CategoryStyle"></TextView>
+
+                   <!-- Input field -->
+                   <LinearLayout
+                       android:layout_height="wrap_content"
+                       android:layout_width="0dp"
+                       android:layout_weight="2"
+                       android:orientation="vertical">
+
+                       <EditText
+                           style="@style/EditorFieldStyle"
+                           android:id="@+id/txt_cuontry"
+                           ></EditText>
+                   </LinearLayout>
+
+               </LinearLayout>
+
+               <LinearLayout
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:orientation="horizontal">
+                   <TextView
+                       android:text="City"
+                       style="@style/CategoryStyle"></TextView>
+
+                   <!-- Input field -->
+                   <LinearLayout
+                       android:layout_height="wrap_content"
+                       android:layout_width="0dp"
+                       android:layout_weight="2"
+                       android:orientation="vertical">
+
+                       <EditText
+                           style="@style/EditorFieldStyle"
+                           android:id="@+id/txt_city"
+                           ></EditText>
+                   </LinearLayout>
+
+               </LinearLayout>
+
+
+
+               <LinearLayout
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:orientation="horizontal">
+                   <TextView
+                       android:text="Level"
+                       style="@style/CategoryStyle"></TextView>
+
+                   <!-- Input field -->
+                   <LinearLayout
+                       android:layout_height="wrap_content"
+                       android:layout_width="0dp"
+                       android:layout_weight="2"
+                       android:orientation="vertical">
+
+                       <EditText
+                           style="@style/EditorFieldStyle"
+                           android:id="@+id/txt_level"
+                           ></EditText>
+                   </LinearLayout>
+
+               </LinearLayout>
+
+
+               <LinearLayout
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:orientation="horizontal">
+                   <TextView
+                       android:text="specialization"
+                       style="@style/CategoryStyle"></TextView>
+
+                   <!-- Input field -->
+                   <LinearLayout
+                       android:layout_height="wrap_content"
+                       android:layout_width="0dp"
+                       android:layout_weight="2"
+                       android:orientation="vertical">
+
+                       <EditText
+                           style="@style/EditorFieldStyle"
+                           android:id="@+id/txt_specialization"
+                           ></EditText>
+                   </LinearLayout>
+
+               </LinearLayout>
+               <LinearLayout
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:orientation="horizontal">
+                   <TextView
+                       android:text="appreciation"
+                       style="@style/CategoryStyle"></TextView>
+
+                   <!-- Input field -->
+                   <LinearLayout
+                       android:layout_height="wrap_content"
+                       android:layout_width="0dp"
+                       android:layout_weight="2"
+                       android:orientation="vertical">
+
+                       <EditText
+                           style="@style/EditorFieldStyle"
+                           android:id="@+id/txt_appreciation"
+                           ></EditText>
+                   </LinearLayout>
+
+               </LinearLayout>
+               <LinearLayout
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:orientation="horizontal">
+                   <TextView
+                       android:text="Year of Experience"
+                       style="@style/CategoryStyle"></TextView>
+
+                   <!-- Input field -->
+                   <LinearLayout
+                       android:layout_height="wrap_content"
+                       android:layout_width="0dp"
+                       android:layout_weight="2"
+                       android:orientation="vertical">
+
+                       <EditText
+                           style="@style/EditorFieldStyle"
+                           android:id="@+id/txt_Year"
+                           ></EditText>
+                   </LinearLayout>
+
+               </LinearLayout>
+               <LinearLayout
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:orientation="horizontal">
+                   <TextView
+                       android:text="Time Every Week"
+                       style="@style/CategoryStyle"></TextView>
+
+                   <!-- Input field -->
+                   <LinearLayout
+                       android:layout_height="wrap_content"
+                       android:layout_width="0dp"
+                       android:layout_weight="2"
+                       android:orientation="vertical">
+
+                       <EditText
+                           style="@style/EditorFieldStyle"
+                           android:id="@+id/txt_hour"
+                           ></EditText>
+                   </LinearLayout>
+
+               </LinearLayout>
+               <LinearLayout
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:orientation="horizontal">
+                   <TextView
+                       android:text="Meeting"
+                       style="@style/CategoryStyle"></TextView>
+
+                   <!-- Input field -->
+                   <LinearLayout
+                       android:layout_height="wrap_content"
+                       android:layout_width="0dp"
+                       android:layout_weight="2"
+                       android:orientation="vertical">
+
+                       <EditText
+                           style="@style/EditorFieldStyle"
+                           android:id="@+id/txt_meeting"
+                           ></EditText>
+                   </LinearLayout>
+
+               </LinearLayout>
+               <LinearLayout
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:orientation="horizontal">
+                   <TextView
+                       android:text="English level"
+                       style="@style/CategoryStyle"></TextView>
+
+                   <!-- Input field -->
+                   <LinearLayout
+                       android:layout_height="wrap_content"
+                       android:layout_width="0dp"
+                       android:layout_weight="2"
+                       android:orientation="vertical">
+
+                       <EditText
+                           style="@style/EditorFieldStyle"
+                           android:id="@+id/txt_English"
+                           ></EditText>
+                   </LinearLayout>
+
+               </LinearLayout>
+
+               <LinearLayout
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:orientation="horizontal">
+                   <TextView
+                       android:text="Member State"
+                       style="@style/CategoryStyle"></TextView>
+
+                   <!-- Input field -->
+                   <LinearLayout
+                       android:layout_height="wrap_content"
+                       android:layout_width="0dp"
+                       android:layout_weight="2"
+                       android:orientation="vertical">
+
+                       <Spinner
+                           android:id="@+id/state_sppiner"
+                           android:layout_width="wrap_content"
+                           android:layout_height="48dp"
+                           android:layout_marginLeft="10dp"
+                           android:layout_marginRight="10dp"
+                           android:spinnerMode="dropdown"/>
+                   </LinearLayout>
+
+               </LinearLayout>
+               <LinearLayout
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:orientation="horizontal">
+                   <TextView
+                       android:text="Admin or Member"
+                       style="@style/CategoryStyle"></TextView>
+
+                   <!-- Input field -->
+                   <LinearLayout
+                       android:layout_height="wrap_content"
+                       android:layout_width="0dp"
+                       android:layout_weight="2"
+                       android:orientation="vertical">
+
+                       <Spinner
+                           android:id="@+id/admin_sppiner"
+                           android:layout_width="wrap_content"
+                           android:layout_height="48dp"
+                           android:layout_marginLeft="10dp"
+                           android:layout_marginRight="10dp"
+                           android:spinnerMode="dropdown"/>
+                   </LinearLayout>
+
+               </LinearLayout>
+
+           </LinearLayout>
+
+
         </RelativeLayout>
     </ScrollView>
 

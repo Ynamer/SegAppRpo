@@ -190,6 +190,13 @@ public class SegContract {
         public final static String COLUMN_USER_STATE = "state";
 
         /**
+         * state of the user.
+         * <p>
+         * Type: INTEGER
+         */
+        public final static String COLUMN_MEMBER_ADMIN = "admin";
+
+        /**
          * Possible values for the Time of the user.
          */
         public static final int TIME_UNKNOWN = 0;
@@ -237,13 +244,45 @@ public class SegContract {
         public static final int ENGLISHINTERMEDIATE = 2;
         public static final int ENGLISHADVANCED = 3;
 
+        /**
+         * Possible values for the admin of the member.
+         */
+        public static final int ADMIN = 0;
+        public static final int NOADMIN = 1;
 
+        /**
+         * Possible values for the state of the member.
+         */
+        public static final int STATE_ACCEPTABLE = 0;
+        public static final int STATE_UNACCEPTABLE= 1;
         /**
          * Returns whether or not the given English Level is {@link #ENGLISH_UNKNOWN}, {@link #ENGLISHBEGINNER},
          * or {@link #ENGLISHINTERMEDIATE} or {@link #ENGLISHADVANCED}.
          */
         public static boolean isValidEnglish(int english) {
             if (english == ENGLISH_UNKNOWN || english == ENGLISHBEGINNER || english == ENGLISHINTERMEDIATE || english == ENGLISHADVANCED) {
+                return true;
+            }
+            return false;
+        }
+
+        /**
+         * Returns whether or not the given state  is {@link #STATE_ACCEPTABLE}, {@link #STATE_UNACCEPTABLE},
+         *
+         */
+        public static boolean isValidState(int state) {
+            if (state ==STATE_ACCEPTABLE || state == STATE_UNACCEPTABLE ) {
+                return true;
+            }
+            return false;
+        }
+
+        /**
+         * Returns whether or not the given state  is {@link #ADMIN}, {@link #NOADMIN},
+         *
+         */
+        public static boolean isValidAdmin(int admin) {
+            if (admin ==ADMIN || admin == NOADMIN) {
                 return true;
             }
             return false;

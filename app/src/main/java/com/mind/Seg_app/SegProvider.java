@@ -227,6 +227,17 @@ public class SegProvider extends ContentProvider {
             throw new IllegalArgumentException("Pet requires valid english");
         }
 
+        // Check that the status is valid
+        Integer status = values.getAsInteger(SegEntry.COLUMN_USER_STATE);
+        if (status == null || !SegEntry.isValidAdmin(status)){
+            throw new IllegalArgumentException("member requires a status");
+        }
+
+        // Check that the admin is valid
+        Integer admin = values.getAsInteger(SegEntry.COLUMN_MEMBER_ADMIN);
+        if (admin == null || !SegEntry.isValidAdmin(admin)) {
+            throw new IllegalArgumentException("member requires a admin");
+        }
 
         // Get writeable database
         SQLiteDatabase database = mDbHelper.getWritableDatabase();
@@ -256,7 +267,7 @@ public class SegProvider extends ContentProvider {
                 // For the PET_ID code, extract out the ID from the URI,
                 // so we know which row to update. Selection will be "_id=?" and selection
                 // arguments will be a String array containing the actual ID.
-                selection = SegEntry.COLUMN_USER_EMAIL + "=?";
+                selection = SegEntry._ID + "=?";
                 selectionArgs = new String[]{String.valueOf(ContentUris.parseId(uri))};
                 return updateMember(uri, contentValues, selection, selectionArgs);
             default:
@@ -272,117 +283,24 @@ public class SegProvider extends ContentProvider {
      */
     private int updateMember(Uri uri, ContentValues values, String selection, String[] selectionArgs) {
 
-
-        // If the {@link SegEntry#COLUMN_MEMBERFULLNAME} key is present,
-        // check that thnulle age value is not null.
-        if (values.containsKey(SegEntry.COLUMN_MEMBERFULLNAME)) {
-            String fullname = values.getAsString(SegEntry.COLUMN_MEMBERFULLNAME);
-            if (fullname == null) {
-                throw new IllegalArgumentException("Pet requires a fullname");
+        //If the {@link SegEntry#COLUMN_USER_STATE} key is present,
+        //check that the state value is valid.
+        if (values.containsKey(SegEntry.COLUMN_USER_STATE)) {
+            Integer state = values.getAsInteger(SegEntry.COLUMN_USER_STATE);
+            if (state == null || !SegEntry.isValidState(state)) {
+                throw new IllegalArgumentException("member requires valid state");
             }
         }
 
 
-        // If the {@link PetEntry#COLUMN_USER_GENDER} key is present,
-        // check that the gender value is valid.
-        if (values.containsKey(SegEntry.COLUMN_USER_GENDER)) {
-            Integer gender = values.getAsInteger(SegEntry.COLUMN_USER_GENDER);
-            if (gender == null || !SegEntry.isValidGender(gender)) {
-                throw new IllegalArgumentException("member requires valid gender");
+        //If the {@link SegEntry#COLUMN_MEMBER_ADMIN} key is present,
+        //check that the admin value is valid.
+        if (values.containsKey(SegEntry.COLUMN_MEMBER_ADMIN)) {
+            Integer admin = values.getAsInteger(SegEntry.COLUMN_MEMBER_ADMIN);
+            if (admin == null || !SegEntry.isValidState(admin)) {
+                throw new IllegalArgumentException("member requires valid state");
             }
         }
-
-        // If the {@link SegEntry#COLUMN_USER_AGE} key is present,
-        // check that the age value is not null.
-        if (values.containsKey(SegEntry.COLUMN_USER_AGE)) {
-            String age = values.getAsString(SegEntry.COLUMN_USER_AGE);
-            if (age == null) {
-                throw new IllegalArgumentException("member requires a age");
-            }
-        }
-/*
-        // If the {@link PetEntry#COLUMN_USER_PHONENUMBER} key is present,
-        // check that the phonenumber value is valid.
-        if (values.containsKey(SegEntry.COLUMN_USER_PHONENUMBER)) {
-            Integer phonenumber = values.getAsInteger(SegEntry.COLUMN_USER_PHONENUMBER);
-            if (phonenumber != null) {
-                throw new IllegalArgumentException("Pet requires valid phonenumber");
-            }
-        }
-        // If the {@link PetEntry#COLUMN_USER_CUNTRY} key is present,
-        // check that the country value is not null.
-        if (values.containsKey(SegEntry.COLUMN_USER_CUNTRY)) {
-            String country = values.getAsString(SegEntry.COLUMN_USER_CUNTRY);
-            if (country == null) {
-                throw new IllegalArgumentException("Pet requires a country");
-            }
-        }
-
-        // If the {@link PetEntry#COLUMN_USER_CITY} key is present,
-        // check that the city value is not null.
-        if (values.containsKey(SegEntry.COLUMN_USER_CITY)) {
-            String city = values.getAsString(SegEntry.COLUMN_USER_CITY);
-            if (city == null) {
-                throw new IllegalArgumentException("Pet requires a city");
-            }
-        }
-
-        // If the {@link PetEntry#COLUMN_USER_LEVEL} key is present,
-        // check that the level value is not null.
-        if (values.containsKey(SegEntry.COLUMN_USER_LEVEL)) {
-            String level = values.getAsString(SegEntry.COLUMN_USER_LEVEL);
-            if (level == null) {
-                throw new IllegalArgumentException("Pet requires a level");
-            }
-        }
-
-        // If the {@link PetEntry#COLUMN_USER_SPECIALIZATION} key is present,
-        // check that the Specialization value is not null.
-        if (values.containsKey(SegEntry.COLUMN_USER_SPECIALIZATION)) {
-            String Specialization = values.getAsString(SegEntry.COLUMN_USER_SPECIALIZATION);
-            if (Specialization == null) {
-                throw new IllegalArgumentException("Pet requires a Specialization");
-            }
-        }
-
-        // If the {@link PetEntry#COLUMN_USER_APPRECIATION} key is present,
-        // check that the Appreciation value is not null.
-        if (values.containsKey(SegEntry.COLUMN_USER_APPRECIATION)) {
-            String Appreciation = values.getAsString(SegEntry.COLUMN_USER_APPRECIATION);
-            if (Appreciation == null) {
-                throw new IllegalArgumentException("Pet requires a Appreciation");
-            }
-        }
-
-        // If the {@link PetEntry#COLUMN_USER_HOUR} key is present,
-        // check that the hour value is valid.
-        if (values.containsKey(SegEntry.COLUMN_USER_HOUR)) {
-            Integer hour = values.getAsInteger(SegEntry.COLUMN_USER_GENDER);
-            if (hour == null || !SegEntry.isValidGender(hour)) {
-                throw new IllegalArgumentException("Pet requires valid hour");
-            }
-        }
-
-        // If the {@link PetEntry#COLUMN_USER_MEETING} key is present,
-        // check that the meeting value is valid.
-        if (values.containsKey(SegEntry.COLUMN_USER_MEETING)) {
-            Integer meeting = values.getAsInteger(SegEntry.COLUMN_USER_MEETING);
-            if (meeting == null || !SegEntry.isValidGender(meeting)) {
-                throw new IllegalArgumentException("Pet requires valid meeting");
-            }
-        }
-
-        // If the {@link PetEntry#COLUMN_USER_ENGLISH} key is present,
-        // check that the english value is valid.
-        if (values.containsKey(SegEntry.COLUMN_USER_ENGLISH)) {
-            Integer english = values.getAsInteger(SegEntry.COLUMN_USER_ENGLISH);
-            if (english == null || !SegEntry.isValidGender(english)) {
-                throw new IllegalArgumentException("Pet requires valid english");
-            }
-        }
-
- */
-
 
 // No need to check the breed, any value is valid (including null).
 

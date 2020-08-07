@@ -9,6 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".Reception"></activity>
         <activity
             android:name=".MainActivity"
             android:theme="@style/AppTheme.FullScreen">
@@ -20,24 +21,39 @@
         </activity>
         <activity
             android:name=".RegisterActivity"
-            android:theme="@style/AppTheme.FullScreen" />
+            android:theme="@style/AppTheme.FullScreen"
+            android:parentActivityName=".MainActivity"/>
         <activity
             android:name=".Register2"
-            android:theme="@style/AppTheme.FullScreen" />
+            android:theme="@style/AppTheme.FullScreen"
+            android:parentActivityName=".MainActivity"/>
         <activity
             android:name=".Register3_Contact"
-            android:theme="@style/AppTheme.FullScreen" />
+            android:theme="@style/AppTheme.FullScreen"
+            android:parentActivityName=".MainActivity"/>
         <activity
             android:name=".Re4_qualification"
-            android:theme="@style/AppTheme.FullScreen" />
+            android:theme="@style/AppTheme.FullScreen"
+            android:parentActivityName=".MainActivity"/>
         <activity
             android:name=".Home"
-            android:theme="@style/AppTheme.FullScreen" />
+            android:theme="@style/AppTheme.FullScreen"
+            android:parentActivityName=".MainActivity"/>
         <activity
             android:name=".Re_LernSelf"
-            android:theme="@style/AppTheme.FullScreen" />
-        <activity android:name=".member_show"
-            android:theme="@style/AppTheme.FullScreen" />
+            android:theme="@style/AppTheme.FullScreen"
+            android:parentActivityName=".MainActivity"/>
+
+        <activity
+            android:name=".member_show"
+            android:theme="@style/AppTheme"
+            android:parentActivityName=".Home"/>
+
+        <!-- Parent activity meta-data to support 4.0 and lower -->
+        <meta-data
+            android:name="android.support.PARENT_ACTIVITY"
+            android:value=".MainActivity" />
+
 
         <provider
             android:name=".SegProvider"

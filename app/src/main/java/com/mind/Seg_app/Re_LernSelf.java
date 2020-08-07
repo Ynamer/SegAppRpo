@@ -249,7 +249,8 @@ public class Re_LernSelf extends AppCompatActivity implements View.OnClickListen
         values.put(SegEntry.COLUMN_USER_HOUR, hour);
         values.put(SegEntry.COLUMN_USER_MEETING, meeting);
         values.put(SegEntry.COLUMN_USER_ENGLISH, english);
-        //values.put(SegEntry.COLUMN_USER_STATE, state);
+        values.put(SegEntry.COLUMN_USER_STATE, 1);
+        values.put(SegEntry.COLUMN_MEMBER_ADMIN,1);
 
         // Insert a new pet into the provider, returning the content URI for the new pet.
         Uri newUri = getContentResolver().insert(SegEntry.CONTENT_URI, values);
@@ -263,6 +264,8 @@ public class Re_LernSelf extends AppCompatActivity implements View.OnClickListen
             // Otherwise, the insertion was successful and we can display a toast.
             Toast.makeText(this, getString(R.string.editor_insert_member_successful),
                     Toast.LENGTH_SHORT).show();
+            Intent intent = new Intent(this, MainActivity.class);
+            startActivity(intent);
         }
     }
 

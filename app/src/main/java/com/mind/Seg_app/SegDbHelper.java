@@ -63,7 +63,8 @@ public class SegDbHelper extends SQLiteOpenHelper {
                 + SegEntry.COLUMN_USER_HOUR + " INTEGER NOT NULL  , "
                 + SegEntry.COLUMN_USER_MEETING + " INTEGER NOT NULL , "
                 + SegEntry.COLUMN_USER_ENGLISH + " INTEGER NOT NULL  , "
-                + SegEntry.COLUMN_USER_STATE + " INTEGER NOT NULL DEFAULT 0 );";
+                + SegEntry.COLUMN_USER_STATE + " INTEGER NOT NULL,"
+                + SegEntry.COLUMN_MEMBER_ADMIN + " INTEGER NOT NULL);";
 
 
         // Execute the SQL statement
@@ -123,16 +124,16 @@ public class SegDbHelper extends SQLiteOpenHelper {
     }
 
 
-    public Cursor GetSingleRow(String id) {
+    public boolean Getadmin(String admin) {
         // array of columns to fetch
         String[] columns = {
                 SegEntry._ID
         };
         SQLiteDatabase db = this.getReadableDatabase();
         // selection criteria
-        String selection = SegEntry.COLUMN_USER_EMAIL + " = ?" + " AND " + SegEntry.COLUMN_USER_PASSWORD + " = ?";
+        String selection = SegEntry.COLUMN_MEMBER_ADMIN + " = ?";
         // selection arguments
-        String[] selectionArgs = {id};
+        String[] selectionArgs = {admin};
         // query user table with conditions
         /**
          * Here query function is used to fetch records from user table this function works like we use sql query.
@@ -148,8 +149,13 @@ public class SegDbHelper extends SQLiteOpenHelper {
                 null);                      //The sort order
 
 
-            return cursor;
-
+        int cursorCount = cursor.getCount();
+        cursor.close();
+        db.close();
+        if (cursorCount > 0) {
+            return true;
+        }
+        return false;
 
     }
 }

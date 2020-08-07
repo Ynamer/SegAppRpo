@@ -80,7 +80,7 @@ public class Home extends AppCompatActivity implements LoaderManager.LoaderCallb
                 //Toast.makeText(Home.this, position+"   " +id, Toast.LENGTH_SHORT).show();
 
                 // Set the URI on the data field of the intent
-                //intent.setData(currentpeturi);
+                intent.setData(currentpeturi);
                 // Lanuch the {@link EditorActivty}to display the data for the current pet.
                 startActivity(intent);
 

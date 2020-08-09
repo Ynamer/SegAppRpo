@@ -172,6 +172,7 @@
                     android:id="@+id/btRegister"
                     android:layout_width="50dp"
                     android:layout_height="50dp"
+                    android:onClick="bttn_regester"
                     android:background="@drawable/bg_ui"
                     android:src="@drawable/ic_add" />
             </RelativeLayout>

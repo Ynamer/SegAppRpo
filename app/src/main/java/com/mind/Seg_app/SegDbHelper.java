@@ -82,8 +82,6 @@ public class SegDbHelper extends SQLiteOpenHelper {
     }
 
 
-
-
     /**
      * This method to check user and password while sign in or not
      *
@@ -91,7 +89,7 @@ public class SegDbHelper extends SQLiteOpenHelper {
      * @param password
      * @return true/false
      */
-    public boolean checkUser(String email, String password) {
+    public boolean checkMemberLogine(String email, String password) {
         // array of columns to fetch
         String[] columns = {
                 SegEntry._ID
@@ -124,16 +122,23 @@ public class SegDbHelper extends SQLiteOpenHelper {
     }
 
 
-    public boolean Getadmin(String admin) {
+    /**
+     * This method to check user and password while sign in or not
+     *
+     * @param email
+     * @param password
+     * @return true/false
+     */
+    public boolean checkMemberState(String email, String password, String state) {
         // array of columns to fetch
         String[] columns = {
                 SegEntry._ID
         };
         SQLiteDatabase db = this.getReadableDatabase();
         // selection criteria
-        String selection = SegEntry.COLUMN_MEMBER_ADMIN + " = ?";
+        String selection = SegEntry.COLUMN_USER_EMAIL + " = ?" + " AND " + SegEntry.COLUMN_USER_PASSWORD + " = ?" + " AND " + SegEntry.COLUMN_USER_STATE + " =?";
         // selection arguments
-        String[] selectionArgs = {admin};
+        String[] selectionArgs = {email, password, state};
         // query user table with conditions
         /**
          * Here query function is used to fetch records from user table this function works like we use sql query.
@@ -147,8 +152,6 @@ public class SegDbHelper extends SQLiteOpenHelper {
                 null,                       //group the rows
                 null,                       //filter by row groups
                 null);                      //The sort order
-
-
         int cursorCount = cursor.getCount();
         cursor.close();
         db.close();
@@ -156,6 +159,46 @@ public class SegDbHelper extends SQLiteOpenHelper {
             return true;
         }
         return false;
-
     }
+
+    /**
+     * This method to check user and password while sign in or not
+     *
+     * @param email
+     * @param password
+     * @return true/false
+     */
+    public boolean checkMemberadmin(String email, String password, String admin) {
+        // array of columns to fetch
+        String[] columns = {
+                SegEntry._ID
+        };
+        SQLiteDatabase db = this.getReadableDatabase();
+        // selection criteria
+        String selection = SegEntry.COLUMN_USER_EMAIL + " = ?" + " AND " + SegEntry.COLUMN_USER_PASSWORD + " = ?" + " AND " + SegEntry.COLUMN_MEMBER_ADMIN + " =?";
+        // selection arguments
+        String[] selectionArgs = {email, password, admin};
+        // query user table with conditions
+        /**
+         * Here query function is used to fetch records from user table this function works like we use sql query.
+         * SQL query equivalent to this query function is
+         * SELECT user_id FROM user WHERE user_email = 'jack@androidtutorialshub.com' AND user_password = 'qwerty';
+         */
+        Cursor cursor = db.query(SegEntry.TABLE_NAME, //Table to query
+                columns,                    //columns to return
+                selection,                  //columns for the WHERE clause
+                selectionArgs,              //The values for the WHERE clause
+                null,                       //group the rows
+                null,                       //filter by row groups
+                null);                      //The sort order
+        int cursorCount = cursor.getCount();
+        cursor.close();
+        db.close();
+        if (cursorCount > 0) {
+            return true;
+        }
+        return false;
+    }
+
+
 }

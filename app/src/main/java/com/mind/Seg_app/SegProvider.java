@@ -229,7 +229,7 @@ public class SegProvider extends ContentProvider {
 
         // Check that the status is valid
         Integer status = values.getAsInteger(SegEntry.COLUMN_USER_STATE);
-        if (status == null || !SegEntry.isValidAdmin(status)){
+        if (status == null || !SegEntry.isValidState(status)){
             throw new IllegalArgumentException("member requires a status");
         }
 
